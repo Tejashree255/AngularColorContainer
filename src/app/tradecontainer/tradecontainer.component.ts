@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { container } from './container.model';
 import { trade } from './trade.model'
 @Component({
   selector: 'app-tradecontainer',
@@ -6,29 +7,29 @@ import { trade } from './trade.model'
   styleUrls: ['./tradecontainer.component.css']
 })
 export class TradecontainerComponent implements OnInit {
+  @Input() contemp:container;
 
   nooftype: any;
-  order1:trade;
-  order2:trade;
-  order3:trade;
+  tradearr:trade[] ;
+  selectedItem:trade;
   constructor() { 
     this.nooftype=3;
-    
+   
   }
 
   ngOnInit() {
-    this.order1={
+    this.tradearr=[{
       transactiontype: "order",
       name: 'order1',parent:'null'
-    };
-    this.order2={
+    },
+    {
       transactiontype: "order",
       name: 'order2',parent:'order1'
-    };
-    this.order3={
+    },
+    {
       transactiontype: "order",
       name: 'order3',parent:'order1'
-    };
+    }]
   }
-
+ 
 }

@@ -1,0 +1,7 @@
+
+<div  *ngFor="let i of itemtemp;">
+    <button  [ngStyle]="{'background-color': (i.transactiontype=== 'order') ? ('#9EB23B') : ((i.transactiontype=== 'execution') ? ('#FEF9A7') : '#BCE6EB') }"
+    style="color: #000000"
+    
+    type="button" >{{i.name}}</button><br><br> 
+    </div>
